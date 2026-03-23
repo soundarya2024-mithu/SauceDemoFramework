@@ -16,6 +16,10 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.automation.utilities.ExtentManager;
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
@@ -23,6 +27,8 @@ public class BaseTest {
 	public static WebDriver driver;
 	public static Properties prop;
 	public static FileInputStream file;
+	public ExtentReports report=ExtentManager.getInstance();
+	public ExtentTest test;
 	
 	@BeforeMethod
 	public void launchBrowser() {
