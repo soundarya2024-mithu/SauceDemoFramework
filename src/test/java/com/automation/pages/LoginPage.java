@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 
 public class LoginPage extends BasePage{
+	public static String currentUrl;
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -23,7 +24,7 @@ public class LoginPage extends BasePage{
 	
 	
 	
-	public void login(String username, String passWord) {
+	public String login(String username, String passWord) {
 		wait.waitForElementVisibility(userName);
 		wait.waitForElementVisibility(password);
 		wait.waitForElementClickable(loginButton);
@@ -31,5 +32,7 @@ public class LoginPage extends BasePage{
 		userName.sendKeys(username);
 		password.sendKeys(passWord);
 		loginButton.click();
+		currentUrl=driver.getCurrentUrl();
+		return currentUrl;
 	}
 }

@@ -14,8 +14,11 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 
+import com.automation.utilities.ExcelReader;
 import com.automation.utilities.ExtentManager;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
@@ -29,8 +32,9 @@ public class BaseTest {
 	public static FileInputStream file;
 	public ExtentReports report=ExtentManager.getInstance();
 	public ExtentTest test;
+	public static ExcelReader excel=new ExcelReader();
 	
-	@BeforeMethod
+	@BeforeSuite
 	public void launchBrowser() {
 		ChromeOptions options = new ChromeOptions();
 
@@ -91,7 +95,7 @@ public class BaseTest {
 		
 	}
 	
-	@AfterMethod
+	@AfterSuite
 	public void closeBrowser() {
 		driver.quit();
 	}

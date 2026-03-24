@@ -2,13 +2,17 @@ package com.automation.utilities;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.DataProvider;
 
-public class Screenshot {
+import com.automation.base.BaseTest;
+
+public class Screenshot extends BaseTest{
 	
 	static WebDriver driver;
 	public static String path;
@@ -24,6 +28,11 @@ public class Screenshot {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@DataProvider(name="dp")
+	public Object[][] getData(Method m){
+		return excel.getExcelData(System.getProperty("user.dir")+"\\src\\test\\resources\\excel\\testData.xlsx",m.getName());
 	}
 
 }
