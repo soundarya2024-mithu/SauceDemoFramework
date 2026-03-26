@@ -1,3 +1,4 @@
+com\automation\pages\CompleteCheckout.class
 com\automation\pages\LoginPage.class
 com\automation\utilities\ExtentManager.class
 com\automation\listeners\Listeners.class
@@ -5,6 +6,9 @@ com\automation\test\LoginTest.class
 com\automation\utilities\Screenshot.class
 com\automation\utilities\WaitUtils.class
 com\automation\base\BaseTest.class
+com\automation\pages\OverviewCheckout.class
 com\automation\pages\BasePage.class
 com\automation\pages\CartPage.class
+com\automation\pages\CheckoutPage.class
 com\automation\pages\InventoryPage.class
+com\automation\utilities\ExcelReader.class

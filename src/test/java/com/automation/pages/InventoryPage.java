@@ -1,5 +1,7 @@
 package com.automation.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,8 +14,11 @@ public class InventoryPage extends BasePage{
 	@FindBy(xpath = "//span[@class='title']")
 	public WebElement pageTitle;
 	
-	@FindBy(id="add-to-cart-sauce-labs-backpack")
-	public WebElement addToCartButton;
+	@FindBy(xpath = "//div[@class='inventory_item_name '] ")
+	public List<WebElement> productsName;
+	
+	@FindBy(xpath="//button[text()='Add to cart']")
+	public List<WebElement> addToCartButton;
 	
 	@FindBy(xpath="//a[@class='shopping_cart_link']")
 	public WebElement cartIcon;
@@ -24,11 +29,17 @@ public class InventoryPage extends BasePage{
 		return title;
 	}
 	
-	public void addToCartFunctionalityValidation() {
-		wait.waitForElementClickable(addToCartButton);
-		wait.waitForElementClickable(cartIcon);
-		addToCartButton.click();
-		cartIcon.click();
+	public void addToCartFunctionalityValidation(String productName) {
+		for(int i=0; i<=productsName.size(); i++) {
+			String name=productsName.get(i).getText();
+			if(name.equalsIgnoreCase(productName)) {
+				wait.waitForElementClickable(addToCartButton.get(i));
+				addToCartButton.get(i).click();
+				break;
+			}
+		}
+		//addToCartButton.click();
+		//cartIcon.click();
 	}
 	
 	

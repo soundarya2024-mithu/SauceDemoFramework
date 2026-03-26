@@ -7,7 +7,7 @@
         <methods>
           <include name="closeBrowser"/>
           <include name="launchBrowser"/>
-          <include name="loginTest" invocation-numbers="1"/>
+          <include name="loginTest"/>
         </methods>
       </class> <!-- com.automation.test.LoginTest -->
     </classes>

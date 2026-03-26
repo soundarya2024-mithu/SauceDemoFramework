@@ -2,9 +2,13 @@ C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation
 C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\listeners\Listeners.java
 C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\pages\BasePage.java
 C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\pages\CartPage.java
+C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\pages\CheckoutPage.java
+C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\pages\CompleteCheckout.java
 C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\pages\InventoryPage.java
 C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\pages\LoginPage.java
+C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\pages\OverviewCheckout.java
 C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\test\LoginTest.java
+C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\utilities\ExcelReader.java
 C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\utilities\ExtentManager.java
 C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\utilities\Screenshot.java
 C:\Users\premk\eclipse-workspace\SauceDemoFramework\src\test\java\com\automation\utilities\WaitUtils.java
