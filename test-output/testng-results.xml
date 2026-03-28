@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-03-26T23:02:30 IST" name="Default suite" finished-at="2026-03-26T23:02:33 IST" duration-ms="3017">
+  <suite started-at="2026-03-28T10:28:19 IST" name="Default suite" finished-at="2026-03-28T10:28:23 IST" duration-ms="3827">
     <groups>
     </groups>
-    <test started-at="2026-03-26T23:02:30 IST" name="Default test" finished-at="2026-03-26T23:02:33 IST" duration-ms="3017">
+    <test started-at="2026-03-28T10:28:19 IST" name="Default test" finished-at="2026-03-28T10:28:23 IST" duration-ms="3827">
       <class name="com.automation.test.LoginTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.automation.test.LoginTest@54a7079e]" started-at="2026-03-26T23:02:25 IST" name="launchBrowser" finished-at="2026-03-26T23:02:30 IST" duration-ms="4482" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.automation.test.LoginTest@27f981c6]" started-at="2026-03-28T10:28:17 IST" name="launchBrowser" finished-at="2026-03-28T10:28:19 IST" duration-ms="2799" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.automation.test.LoginTest@54a7079e]" started-at="2026-03-26T23:02:30 IST" name="loginTest" data-provider="dp" finished-at="2026-03-26T23:02:32 IST" duration-ms="2031" status="PASS">
+        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.automation.test.LoginTest@27f981c6]" started-at="2026-03-28T10:28:20 IST" name="loginTest" data-provider="dp" finished-at="2026-03-28T10:28:23 IST" duration-ms="3052" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -25,35 +25,14 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[Sauce Labs Backpack,Sauce Labs Bolt T-Shirt,Sauce Labs Fleece Jacket]]>
+                <![CDATA[Sauce Labs Backpack,Sauce Labs Bolt T-Shirt,Sauce Labs Bike Light,Sauce Labs Fleece Jacket]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method signature="loginTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.automation.test.LoginTest@54a7079e]" started-at="2026-03-26T23:02:32 IST" name="loginTest" data-provider="dp" finished-at="2026-03-26T23:02:33 IST" duration-ms="271" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[locked_out_user]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[secret_sauce]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Sauce Labs Bolt T-Shirt]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.automation.test.LoginTest@54a7079e]" started-at="2026-03-26T23:02:33 IST" name="closeBrowser" finished-at="2026-03-26T23:02:33 IST" duration-ms="433" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.automation.test.LoginTest@27f981c6]" started-at="2026-03-28T10:28:23 IST" name="closeBrowser" finished-at="2026-03-28T10:28:24 IST" duration-ms="494" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

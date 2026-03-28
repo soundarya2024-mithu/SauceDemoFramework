@@ -2,6 +2,7 @@ package com.automation.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -30,18 +31,22 @@ public class InventoryPage extends BasePage{
 	}
 	
 	public void addToCartFunctionalityValidation(String productName) {
-		for(int i=0; i<=productsName.size(); i++) {
-			String name=productsName.get(i).getText();
-			if(name.equalsIgnoreCase(productName)) {
-				wait.waitForElementClickable(addToCartButton.get(i));
-				addToCartButton.get(i).click();
-				break;
-			}
-		}
+		//System.out.println(productName);
+		 String xpath = "//div[text()='" + productName.trim() + "']" +
+                 "/ancestor::div[@class='inventory_item']" +
+                 "//button";
+
+		 WebElement addButton = driver.findElement(By.xpath(xpath));
+		 wait.waitForElementClickable(addButton);
+		 addButton.click();
+
+		 System.out.println("Added product: " + productName);
+	}
+			
 		//addToCartButton.click();
 		//cartIcon.click();
 	}
 	
 	
 
-}
+

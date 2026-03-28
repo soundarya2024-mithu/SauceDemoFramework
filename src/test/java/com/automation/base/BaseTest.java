@@ -29,8 +29,9 @@ public class BaseTest {
 	public static Properties prop;
 	public static FileInputStream file;
 	public ExtentReports report=ExtentManager.getInstance();
-	public ExtentTest test;
+	public static ExtentTest test;
 	public static ExcelReader excel=new ExcelReader();
+	public static String[] products;
 	
 	@BeforeSuite
 	public void launchBrowser() {

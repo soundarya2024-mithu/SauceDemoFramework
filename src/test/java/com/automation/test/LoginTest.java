@@ -1,5 +1,8 @@
 package com.automation.test;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,6 +14,7 @@ import com.automation.pages.InventoryPage;
 import com.automation.pages.LoginPage;
 import com.automation.pages.OverviewCheckout;
 import com.automation.utilities.Screenshot;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class LoginTest extends BaseTest {
 	
@@ -18,29 +22,31 @@ public class LoginTest extends BaseTest {
 	@Test(dataProviderClass = Screenshot.class, dataProvider  = "dp")
 	
 	public void loginTest(String user, String pass, String productName) {
-		
+		//test.log(LogStatus.INFO, "Launching Application");
 		LoginPage lp=new LoginPage(driver);
 		
 		lp.login(user, pass);
+		//test.log(LogStatus.INFO, "Logged in with user: " + user);
 		if(LoginPage.currentUrl.contains("inventory")) {
 			System.out.println("Login executed!!!  "+user);
 			
 			InventoryPage ip=new InventoryPage(driver);
 			Assert.assertEquals(ip.getPageTitle(), "Products");
 			System.out.println("Product title found corretly!!!");
-			String[] products=productName.split(",");
-			System.out.println(products);
+			products=productName.split(",");
 			for (String prod : products) {
-				System.out.println(prod);
 				ip.addToCartFunctionalityValidation(prod);
 			}
+		
 			ip.cartIcon.click();
-			cartPageValidation();
-			checkoutPageValidation();
-			overviewCheckoutValidation();
-			completeChecoutValidation();
-			 
-			driver.navigate().to("https://www.saucedemo.com/");
+		cartPageValidation();
+		
+		  checkoutPageValidation(); 
+		  overviewCheckoutValidation();
+		  completeChecoutValidation();
+		  
+		  driver.navigate().to("https://www.saucedemo.com/");
+		 
 		}
 		else {
 			System.out.println("Login Failed!!! "+user);
@@ -49,9 +55,16 @@ public class LoginTest extends BaseTest {
 	
 	public void cartPageValidation(){
 		CartPage cp=new CartPage(driver); 
-		String actualProduct=cp.productValidation();
-		  Assert.assertEquals(actualProduct,"Sauce Labs Backpack");
-		 System.out.println("cart product validation successfull "+actualProduct);
+		List<String> actualProducts=cp.productValidation();
+		List<String> expectedProducts = Arrays.stream(products).toList();
+		for (String expected : expectedProducts) {
+		    Assert.assertTrue(
+		    		actualProducts.contains(expected),
+		        "Missing product: " + expected
+		    );
+		}
+		//test.log(LogStatus.INFO, "cart product validation successfull ");
+		 System.out.println("cart product validation successfull ");
 		 String currentUrl=driver.getCurrentUrl();
 		System.out.println("url: "+currentUrl); 
 	}
